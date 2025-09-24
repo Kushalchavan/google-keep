@@ -26,7 +26,7 @@ export const updateNote = async (req, res) => {
   try {
     const note = await Notes.findByIdAndUpdate(
       req.params.id,
-      { title, description, author: req.user._id },
+      { title, description, author: req.user._id }, // only update if it belongs to user
       { new: true }
     );
     if (!note) return res.status(400).json({ message: "No note found" });
@@ -61,7 +61,7 @@ export const deleteNote = async (req, res) => {
 
 export const getAllNotes = async (req, res) => {
   try {
-    const note = await Notes.find().sort({ createdAt: -1 });
+    const note = await Notes.find().sort({ createdAt: -1 }); // for latest first
 
     res.status(200).json(note);
   } catch (error) {
