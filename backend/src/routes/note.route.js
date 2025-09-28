@@ -12,6 +12,6 @@ const router = express.Router();
 router.post("/create", verifyJwt, createNote);
 router.put("/update/:id", verifyJwt, updateNote);
 router.get("/notes", verifyJwt, getAllNotes);
-router.delete("/:id", verifyJwt, deleteNote);
+router.delete("/delete/:id", verifyJwt, deleteNote);
 
 export default router;

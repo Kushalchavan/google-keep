@@ -6,10 +6,10 @@ import RequireAuth from "./components/RequireAuth";
 const App = () => {
   return (
     <Routes>
-      <Route path="/login" element={<Login />} />
+      <Route path="/" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
 
-      <Route path="/notes" element={<RequireAuth>notes</RequireAuth>} />
+      <Route path="/notes" element={<RequireAuth>Home page here</RequireAuth>} />
       
     </Routes>
   );
