@@ -51,12 +51,15 @@ export const AuthProvider = ({ children }) => {
         setLoading(false);
         return;
       }
+
       API.defaults.headers.common["Authorization"] = `Bearer ${token}`;
       try {
-        const { data } = await API.get("auth/user");
+        const { data } = await API.get("/auth/user");
         setUser(data);
       } catch (error) {
         console.warn("Token invalid or profile fetch failed", error.message);
+      } finally {
+        setLoading(false);
       }
     })();
   }, []);

@@ -16,6 +16,6 @@ export const updateNote = async (id, payload) => {
 };
 
 export const deleteNote = async (id) => {
-  const { data } = await API.delete(`/notes/${id}`);
+  const { data } = await API.delete(`/note/delete/${id}`);
   return data;
 };

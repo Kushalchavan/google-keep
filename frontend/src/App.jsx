@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import Login from "./pages/auth/Login";
 import Signup from "./pages/auth/Signup";
 import RequireAuth from "./components/RequireAuth";
+import Home from "./pages/Home";
 
 const App = () => {
   return (
@@ -9,8 +10,14 @@ const App = () => {
       <Route path="/" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
 
-      <Route path="/notes" element={<RequireAuth>Home page here</RequireAuth>} />
-      
+      <Route
+        path="/notes"
+        element={
+          <RequireAuth>
+            <Home />
+          </RequireAuth>
+        }
+      />
     </Routes>
   );
 };
