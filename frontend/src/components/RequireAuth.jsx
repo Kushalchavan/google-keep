@@ -8,7 +8,7 @@ const RequireAuth = ({ children }) => {
 
   if (loading)
     return (
-      <div className="w-screen h-screen flex justify-center items-center">
+      <div className="w-screen h-screen flex justify-center items-center dark:bg-gray-900 dark:text-white">
         <LoaderCircle size={30} className="animate-spin" />
       </div>
     );
